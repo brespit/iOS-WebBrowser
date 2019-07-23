@@ -44,11 +44,18 @@ class ViewController: UIViewController {
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(webView)
 
+        load(url: "https://google.com")
     }
     @IBAction func BackButtonAction(_ sender: Any) {
     }
     @IBAction func ForwardButtonAction(_ sender: Any) {
     }
+    
+    // MARK: Private methods
+    private func load(url: String) {
+        webView.load(URLRequest(url: URL(string: url)!))
+    }
+    
 }
 
 // MARK: Delegates
